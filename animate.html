@@ -1,0 +1,35 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+<script>   
+$(document).ready(function(){  
+    $("button").click(function(){  
+        $("div").animate({left: '450px'});
+        $("div").animate({fontSize: '20px'});
+        $("div").animate({height: '100px'});
+        $("div").animate({width: '100px'});
+        $("div").animate({rotate: '360deg'});
+        $("div").animate({borderWidth: '10px'});
+        $("div").animate({backgroundColor: '#ff0000'},function() {
+                     // Reverse animation
+                     $(this).animate({left: '10px'})
+                            .animate({fontSize: '20px'})
+                            .animate({height: '200px'})
+                            .animate({width: '200px'})
+                            .animate({borderWidth: '10px'})
+                            .animate({backgroundColor: '#070707'})
+                            .animate({rotate: '360deg'});
+        });
+
+   });  
+});  
+
+</script>   
+</head>  
+<body>  
+<button>Start Animation</button>  
+<p>A simple animation example:</p>  
+<div style="background:#f00505;height:100px;width:100px;position:absolute;"></div>  
+</body>  
+</html>

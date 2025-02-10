@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Form</title>
+    <script type="text/javascript">
+        function Getdata(){
+            let name;
+
+            name = document.f1.nm.value;
+           
+            
+            let age;
+
+            age = document.f1.age.value;
+           
+            
+            let inc;
+
+            inc = document.f1.inc.value;
+
+            document.write("Your income is" + inc + "<br>");  
+            document.write("Welcome" + name + "<br>"); 
+            document.write("Your age is" + age + "<br>");
+        }
+    </script>
+</head>
+<body>
+    <h1>form</h1>
+        <form name="f1" onsubmit="Getdata();">
+        <label>Enter Name</label>
+        <input type="text" name="nm">
+        <br>
+        <label>Enter Age</label>
+        <input type="number" name="age">
+        <br>
+        <label>Enter Income</label>
+        <input type="number" name="inc">
+        <br>
+        <input type="submit" value="Click Here">
+        </form>
+  </body>
+  </html>

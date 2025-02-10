@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form to calculate with operator </title>
+        <script type="text/javascript">
+            function Getdata(){
+                let num1;
+                num1=parseFloat(document.f1.num1.value);
+                let num2;
+                num2=parseFloat(document.f1.num2.value);
+                let op = document.f1.op.value;
+                if(op == "+")
+                {
+                    document.write("The sum is : " + (num1 + num2));
+                }
+                else if(op == "-")
+                {
+                    document.write("The difference is : " + (num1 - num2));
+                }
+                else if(op == "*")
+                {
+                    document.write("The product is : " + (num1 * num2));
+                }
+                else if(op == "/")
+                {
+                    document.write("The division is : " + (num1 / num2));
+                }
+                else if(op =="none")
+                {
+                    document.write("No operator selected");
+                }
+                else
+                {
+                    document.write("Invalid operator");
+                }
+            }
+        </script>
+        <body>
+            <form name="f1" onsubmit="Getdata();">
+                <label>Enter 1st number</label>
+                <input type="number" name="num1">
+                <br>
+                <label>Enter 2nd number</label>
+                <input type="number" name="num2">
+                <br>
+                <label>Enter operator</label>
+                <select name="op">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                    <option value="none">none</option>
+                <br>
+                <br>
+                <input type="submit" value="Click Here">
+            </form>
+        </body>
+    </head>
+</html>

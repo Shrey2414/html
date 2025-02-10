@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Max or min</title>
+        <script type="text/javascript">
+        function Getdata(){
+            let num1;
+             num1=parseInt(document.f1.num1.value);
+            let num2;
+             num2=parseInt(document.f1.num2.value);
+            let choice = document.f1.button.value;
+
+            document.write("The 1st number is : " + num1 + "<br>");
+            document.write("The 2nd number is : " + num2 + "<br>");
+
+            if(choice == "MAX")
+         {
+                if(num1 > num2)
+                {
+                    document.write("The maximum number is : " + num1);
+                }
+                else
+                {
+                    document.write("The maximum number is : " + num2);
+                }
+            }
+            else
+            {
+                if(num1 < num2)
+                {
+                    document.write("The minimum number is : " + num1);
+                }
+                else
+                {
+                    document.write("The minimum number is : " + num2);
+                }
+            }
+        }     
+        </script>
+        <body>
+            <form name="f1" onsubmit="Getdata();">
+                <label>Enter 1st number</label>
+                <input type="number" name="num1">
+                <br>
+                <label>Enter 2nd number</label>
+                <input type="number" name="num2">
+                <br>
+                <label>Radio button</label>
+                <input type="radio" name="button" value="MAX" >MAX
+                <input type="radio" name="button" value="MIN">MIN
+                <br>
+                <input type="submit" value="Click Here">
+            </form>
+        </body>
+    </head>
+</html>

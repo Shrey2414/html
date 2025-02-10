@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Shreyash CV</title>
+    <link rel="stylesheet" href="CV.css">
+    <script>
+        class TxtRotate {
+            constructor(el, toRotate, period) {
+                this.toRotate = toRotate;
+                this.el = el;
+                this.loopNum = 0;
+                this.period = parseInt(period, 10) || 2000;
+                this.txt = '';
+                this.tick();
+                this.isDeleting = false;
+            }
+
+            tick() {
+                let i = this.loopNum % this.toRotate.length;
+                let fullTxt = this.toRotate[i];
+
+                if (this.isDeleting) {
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+
+                this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+                let that = this;
+                let delta = 200 - Math.random() * 100;
+
+                if (this.isDeleting) { delta /= 2; }
+
+                if (!this.isDeleting && this.txt === fullTxt) {
+                    delta = this.period;
+                    this.isDeleting = true;
+                } else if (this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    this.loopNum++;
+                    delta = 500;
+                }
+
+                setTimeout(function() {
+                    that.tick();
+                }, delta);
+            }
+        }
+
+        window.onload = function() {
+            let elements = document.getElementsByClassName('txt-rotate');
+            for (let i = 0; i < elements.length; i++) {
+                let toRotate = elements[i].getAttribute('data-rotate');
+                let period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtRotate(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            let css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+            document.body.appendChild(css);
+        };
+    </script>
+          
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Shreyash CV</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>   
+            <li class="nav-item">
+              <a class="nav-link" href="#education">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#certificates">Certificates</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Contact">Contact</a>
+            </li>
+            </ul>
+        </div>
+      </nav>
+    </div>
+    <section class="hero-wrap js-fullheight">
+        <div class ="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+                <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
+                    <div class="text text-center">
+                        <h1>Hi, I'm <span>Shreyash</span></h1>
+                        <h2>I'm a
+                            <span
+                                class="txt-rotate"
+                                data-period="2000"
+                                data-rotate='["Front-End Developer", "UI/UX Designer"]'></span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="heading-section">About Me</h2>
+                    <p>Hi, I'm Shreyash, a passionate Front-End Developer and UI/UX Designer. I have a good knowledge of HTML, CSS, JavaScript, Bootstrap, and React. I have also worked on various projects and have a good understanding of the design principles. I am always eager to learn new things and improve my skills.</p>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="heading-section">Personal Information</h2>
+                    <ul>
+                        <li><span>Name:</span> Shreyash Pandya</li>
+                        <li><span>Date of Birth:</span> 24th January 2004</li>
+                        <li><span>Address:</span> Rajkot, Gujarat</li>
+                        <li><span>Email:</span> shreyashrpandya@gmail.com</li>
+                        <li><span>Phone:</span> +91 98256 62825</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-section" id="resume-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <nav id="navi">
+                        <ul>
+                            <li><a href="#page-1">Education</a></li>
+                            <li><a href="#page-2">Certificates</a></li>
+                            <li><a href="#page-3">Training</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-6">
+                    <div id="page-1" class="page one">
+                        <h2 class="heading">Education</h2>
+                        <div class="resume-wrap d-flex ftco-animate">
+                            <div class="icon d-flex align-items-center justify-content-center">
+                                <span class="flaticon-ideas"></span>
+                            </div>
+                            <div class="text pl-3">
+                                <span class="date">2017-2021</span>
+                                <h2>Bachelor of Technology in Computer Science and Engineering</h2>
+                                <span class="position">Parul University of Engineering and Technology, Vadodara</span>
+                            </div>
+                        </div>
+                    <div id="page-2" class="page two">
+                        <h2 class="heading">Certificates</h2>
+                        <div class="resume-wrap d-flex ftco-animate">
+                            <div class="icon d-flex align-items-center justify-content-center">
+                                <span class="flaticon-ideas"></span>
+                            </div>
+                            <div class="text pl-3">
+                                <span class="date">February, 2023</span>
+                                <h2>Computer Network Essentials</h2>
+                                <span class="position">Accreditation by Cisco</span>
+                            </div>
+                        </div>
+                        <div class="resume-wrap d-flex ftco-animate">
+                            <div class="icon d-flex align-items-center justify-content-center">
+                                <span class="flaticon-ideas"></span>
+                            </div>
+                            <div class="text pl-3">
+                                <span class="date">November, 2022</span>
+                                <h2>Basics of Python</h2>
+                                <span class="position">Accreditation by Infosys</span>
+                            </div>
+                        </div>
+                        <div class="resume-wrap d-flex ftco-animate">
+                            <div class="icon d-flex align-items-center justify-content-center">
+                                <span class="flaticon-ideas"></span>
+                            </div>
+                            <div class="text pl-3">
+                                <span class="date">June, 2022</span>
+                                <h2>Introduction to Programming using Python</h2>
+                                <span class="position">Accreditation by Microsoft Technology Associate</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="page-3" class="page three">
+                        <h2 class="heading">Training</h2>
+                        <div class="resume-wrap d-flex ftco-animate">
+                            <div class="icon d-flex align-items-center justify-content-center">
+                                <span class="flaticon-ideas"></span>
+                            </div>
+                            <div class="text pl-3">
+                                <span class="date">November, 2024</span>
+                                <h2>Front-End Development</h2>
+                                <span class="position">From KS Technologies</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-section contact-section" id="Contact">
+        <div class="container">
+            <div class="row justify-content-center mb-5 pb-3">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <h1 class="big big-2">Contact</h1>
+                    </div>
+            </div>
+            <div class="row d-flex contact-info mb-5">
+                <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                    <div class="align-self-stretch box text-center p-4 shadow">
+                        <div class="icon d-flex align-items-center justify-content-center">
+                            <span class="icon-map-signs"></span>
+                        </div>
+                        <div>
+                            <h3 class="mb-4">Address</h3>
+                            <p>Rajkot, Gujarat</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                    <div class="align-self-stretch box text-center p-4 shadow">
+                        <div class="icon d-flex align-items-center justify-content-center">
+                            <span class="icon-phone2"></span>
+                        </div>
+                        <div>
+                            <h3 class="mb-4">Contact Number</h3>
+                            <p><a href="tel://+91 98256 62825">+91 98256 62825</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                    <div class="align-self-stretch box text-center p-4 shadow">
+                        <div class="icon d-flex align-items-center justify-content-center">
+                            <span class="icon-paper-plane"></span>
+                        </div>
+                        <div>
+                            <h3 class="mb-4">Email Address</h3>
+                            <p><a href="mailto:shreyashrpandya@gmail.com">shreyashrpandya@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-12 text-center">
+                    <p>
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | Shreyash Pandya
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dom Form</title>
+        <script type="text/javascript">
+            function Getdata(){
+                let name;
+                let country;
+                let gender;
+                name = document.f1.nm.value;
+                country = document.f1.Country.value;
+                gender = document.f1.gen.value;
+                document.write("Name: " + name + "<br>");
+                document.write("Country: " + country + "<br>");
+                document.write("Gender: " + gender + "<br>");
+            }
+        </script>
+    </head>
+    <body>
+        <form name="f1" onsubmit="Getdata(); ">
+            <label>Name:</label>
+            <input type="text" name="nm">
+            <br>
+            <label>Country:</label>
+            <select name="Country" >
+                <option value="Spain">Spain</option>
+                <option value="India" selected >India</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Australia">Australia</option>
+                <option value="Japan">Japan</option>
+            </select>
+            <br>
+            <label>Gender:</label>
+            <input type="radio" name="gen" value="MALE" checked>MALE
+            <input type="radio" name="gen" value="FEMALE">FEMALE
+            <br>
+            <input type="submit" value="Submit">
+</html>

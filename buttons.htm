@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Buttons (prompt, alert, confirm)</title>
+        <script type="text/javascript">
+           function Fun(){
+            let name = prompt("Enter your name");
+            document.write("Hello " + name);
+           }
+           function alt1(){
+                alert("Hello, welcome to the page");
+                
+              }
+             function con1(){
+                let con = confirm("do you want to continue?");
+                document.write(con);
+              }
+            
+        </script>
+    </head>
+    <body>
+        <form name="f1">
+            <input type="button" value="prompt" onclick="Fun()">
+            <input type="button" value="alert" onclick="alt1()">
+            <input type="button" value="confirm" onclick="con1()">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homework form 3</title>
+    </head>
+    <body>
+        <table border="5" width="100" height="100" cellspacing="6" cellpadding="5">
+            <tr>
+                <th width="100" bgcolor="#dc97ff">Name</th>
+                <th width="100" bgcolor="#dc97ff">Value</th>
+            </tr>
+            <tr>
+                <td align="left">Name</td>
+                <td><input type="text" size="30" name="nm"></td>
+            </tr>
+            <tr>
+                <td>Sex</td>
+                <td>
+                    <input type="radio" name="gen" value="MALE">MALE
+                    <br>
+                    <input type="radio" name="gen" value="FEMALE" checked>FEMALE
+                </td>
+            </tr>
+            <tr>
+                <td align="left">Eye Color</td>
+                <td> <select name="eye">
+                    <option value="green">Green</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Grey">Grey</option>
+                    <option value="Golden">Golden</option>
+                    <option value="Brown" selected>Brown</option>
+                    <option value="Black">Black</option>
+                </select> 
+            </td>
+            </tr>
+            <tr>
+                <td>Check all that apply</td>
+                <td>
+                    <input type="checkbox" value="feet" name="hei">Over 6ft Tall 
+                    <br>
+                    <input type="checkbox" value="weight" name="wei">Over 200 Pounds
+                 </td>
+            </tr>
+            <br>
+            <tr>
+                <br>
+                <td colspan="2" align="center">Describe your athletic ability:</td>
+            </tr>
+            <tr>
+                <td colspan="2"><textarea rows="7" cols="37"></textarea></td>
+            </tr>
+            <tr>
+            <td colspan="2" align="center">
+            <input type="submit" value="Enter my information">
+            </td>
+            </tr>
+        </table>
+    </body>
+</html>

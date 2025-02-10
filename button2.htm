@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Button prompt for yes and no to square the number</title>
+        <script type="text/javascript">
+            function Square(){
+                let num = document.f1.num.value;
+                if(confirm("Do you want to square the number?"))
+                {
+                    document.write('The square of the number is :' + num*num);
+                }
+                else
+                {
+                    document.write('The number is :' + num);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="f1">
+            <label>Enter Number</label>
+            <input type="number" name="num">
+            <br>
+            <input type ="button" value="submit" onclick="Square()">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator Using 5 operators with switch case</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            let x,y,z;
+            x = parseFloat(prompt("Enter the first decimal number"))
+            y = parseFloat(prompt("Enter the second decimal number"))
+            z = prompt("Enter the operator (+, -, *, /, %)");
+            
+            switch(z)
+            {
+                case'+':
+                document.write("the additon is :" ,x+y);
+                break;
+
+                case'-' :
+                document.write("the subtraction is :" ,x-y);
+                break;
+
+                case '*':
+                document.write("the multiplication is :" ,x*y);
+                break;
+
+                case '/':
+                document.write("the modulo is :" ,x/y);
+                break;
+
+                case '%':
+                document.write("the division is :" ,x%y);
+                break;
+
+                default:
+                document.write("invalid operator");
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title>Creating Breadcrumbs</title> 
+	<style> 
+		body { 
+			text-align: center; 
+		} 
+		h1{ 
+			color: green; 
+		} 
+		
+		/* Styling addressLink class */ 
+		.addressLink { 
+			list-style: none; 
+			overflow: hidden; 
+			font: 16px; 
+			margin: 30px; 
+			padding: 0px; 
+			border: 2px solid black; 
+			font-style: italic; 
+		} 
+		
+		/* Floating addressLink list */ 
+		.addressLink li { 
+			float: left; 
+		} 
+		
+		/* Styling addressLink list's anchor element*/ 
+		.addressLink li a { 
+			background: #006600; 
+			color: white; 
+			text-decoration: none; 
+			padding: 5px 0px 5px 65px; 
+			position: relative; 
+			float: left; 
+		} 
+		
+		.addressLink li a:after { 
+			content: " "; 
+			border-top: 50px solid transparent; 
+			border-bottom: 50px solid transparent; 
+			border-left: 30px solid #006600; 
+			margin-top: -50px; 
+			position: absolute; 
+			top: 50%; 
+			left: 100%; 
+			z-index: 2; 
+		} 
+		
+		.addressLink li a:before { 
+			content: " "; 
+			border-top: 50px solid transparent; 
+			border-bottom: 50px solid transparent; 
+			border-left: 30px solid white; 
+			position: absolute; 
+			top: 50%; 
+			left: 100%; 
+			z-index: 1; 
+		} 
+		
+		/* First child padding */ 
+		.addressLink li:first-child a { 
+			padding-left: 10px; 
+		} 
+		
+		/* Second child bg-color */ 
+		.addressLink li:nth-child(2) a { 
+			background: #009933; 
+		} 
+		
+		/* Second child Second half bg-color */ 
+		.addressLink li:nth-child(2) a:after { 
+			border-left-color: #009933; 
+		} 
+		
+		/* Third child bg-color */ 
+		.addressLink li:nth-child(3) a { 
+			background: #33cc33; 
+		} 
+		
+		/* Third child Second half bg-color */ 
+		.addressLink li:nth-child(3) a:after { 
+			border-left-color: #33cc33; 
+		} 
+		
+		/* Last child bg-color and text-color */ 
+		.addressLink li:last-child a { 
+			background: transparent !important; 
+			color: black; 
+		} 
+		
+		.addressLink li:last-child a:after { 
+			border: 0px; 
+		} 
+		
+		/* Hover on list's anchor element */ 
+		.addressLink li a:hover { 
+			background: #99ff99; 
+		} 
+		
+		.addressLink li a:hover:after { 
+			border-left-color: #99ff99 !important; 
+		} 
+	</style> 
+</head> 
+
+<body> 
+	<h1>Creating Breadcrumbs</h1> 
+	<ul class="addressLink"> 
+		<li> 
+			<a href="#">Web Technologies</a> 
+		</li> 
+		<li> 
+			<a href="#">HTML</a> 
+		</li> 
+		<li> 
+			<a href="#">Tags</a> 
+		</li> 
+		<li> 
+			<a href="#">Attributes</a> 
+		</li> 
+	</ul> 
+</body> 
+
+</html> 
