@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up Page</title>
+        <script type="text/javascript">
+            function check() {
+                let name = document.f1.fname.value;
+                let number = document.f1.cname.value;
+                let email = document.f1.email.value;
+                let password = document.f1.password.value;
+                let age = parseInt(document.f1.age.value);
+                let regex =  /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/;
+
+        
+                if (name == "") {
+                    alert("Please enter your name");
+                    return false;
+                }
+                if (number == "") {
+                    alert("Please enter your contact number");
+                    return false;
+                }
+                if (email == "") {
+                    alert("Please enter your email id");
+                    return false;
+                }
+                if (password == "") {
+                    alert("Please enter your password");
+                    return false;
+                }
+                if (password.length <= 5) {
+                    alert("Password length must be greater than 5 characters");
+                    return false;
+                }
+                if (regex.test(password) == false) {
+                    alert("Invalid Password Format");
+                    return false;
+                }
+                if (age == "") {
+                    alert("Please enter your age");
+                    return false;
+                }
+                if (age < 18) {
+                    alert("You must be 18 years or older to sign up");
+                    return false;
+                }
+                alert("Form Submitted Successfully");
+                return true;
+            }
+        </script>
+        </head>
+        <body>
+            <h1 align="center">Sign Up</h1>
+            <br>
+            <form name="f1" onsubmit="check()">
+                <label for="name">Name:</label>
+                <input type="text" name="fname" placeholder="Enter your First Name">
+                <br>
+                <br>
+                <label for="Number">Contact Number:</label>
+                <input type="number" name="cname" placeholder="Enter your Contact Number">
+                <br>
+                <br>
+                <label for="Email">Email id:</label>
+                <input type="email" name="email" placeholder="Enter your Email">
+                <br>
+                <br>
+                <label for="Password">Password:</label>
+                <input type="password" name="password" placeholder="Enter your Password">
+                <br>
+                <br>
+                <label for="Age">Age:</label>
+                <input type="number" name="age" placeholder="Enter your Age">
+                <br>
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+        </body>
+        </html>

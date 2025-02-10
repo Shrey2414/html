@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Time</title>
+    </head>
+    <body>
+        Current Date and Time : <span id = "txt"></span>
+        <script>
+            let today = new Date();
+            document.getElementById("txt").innerHTML = today;
+
+
+            let date = new Date();
+            let day = date.getDate();
+            let month = date.getMonth() + 1;
+            let year = date.getFullYear();
+            document.write("<br>Date is : "+day+"/"+month+"/"+year);
+
+
+            let today1 = new Date();
+            let h = today1.getHours();
+            let m = today1.getMinutes();
+            let s = today1.getSeconds();
+            document.getElementById("txt").innerHTML = h + ":" + m + ":" + s;
+
+
+        
+        </script>
+    </body>
+</html>

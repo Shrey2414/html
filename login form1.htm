@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Form</title>
+        <script type="text/javascript">
+            function check() {
+                let username = document.f1.username.value;
+                let password = document.f1.password.value;
+                if(username == "")
+            {
+                alert("Please enter the username");
+                return false;
+            }
+            if (password == "")
+            {
+                alert("Please enter the password");
+                return false;
+            }
+            alert("Form Submitted Successfully");
+            return true;
+            }
+        </script>
+    </head>
+    <body>
+        <h2 align="center">Login Form</h2>
+        <form name="f1" align="center" onsubmit="check()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br><br>
+            <input type="submit" value="Login">
+        </form>
+    </body>
+</html>

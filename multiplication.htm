@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multiplication with while loop</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            let count = 1;
+            let factorial = 1;
+            let n = parseInt(prompt("Enter the number"));
+
+            document.write("Starting loop" + "<br>");
+            while (count <= n)
+            {
+                document.write( "Current count : " + count + "<br>");
+                factorial = factorial * count;
+                count++;
+            }
+            document.write("The factorial is : " + factorial + "<br>");
+        </script>
+    </body>
+</html>

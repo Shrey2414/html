@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>While loop for odd numbers</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            let count = 1;
+            let sum=0;
+            let n = parseInt(prompt("Enter the number"));
+            document.write("Starting loop" + "<br>");
+            while (count <= n){
+                document.write( "Current count : "+ count + "<br>");
+                sum += count;
+                count +=2 ;
+            }
+            document.write("The sum is : " + sum);
+
+        </script>
+    </body>
+</html>

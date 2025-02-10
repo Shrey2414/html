@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sum of n number with while</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            let count = 0;
+            let sum = 0;
+            let n = parseInt(prompt("Enter the number"));
+
+            document.write("Starting loop" + "<br>");
+            while (count <= n){
+                document.write( "Current count : "+ count + "<br>");
+                sum += count;
+                count++;
+            }
+            document.write("The sum is : " + sum + "<br>");
+            document.write("Loop stopped!" + "<br>");
+        </script>
+    </body>
+</html>
