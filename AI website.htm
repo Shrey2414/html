@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Fancy Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMareJF3lWPQJ59IdkKOKQ5B2ijr6ZBVGp9g2fw" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #4a90e2, #9013fe);
+            color: #fff;
+            overflow-x: hidden;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            font-size: 2rem;
+        }
+        header nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+        header nav a:hover {
+            color: #f9d342;
+            transform: scale(1.1);
+        }
+        section {
+            text-align: center;
+            padding: 100px 10%;
+            animation: fadeIn 2s;
+        }
+        section h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.8;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: #f9d342;
+            color: #000;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover {
+            background: #ffd700;
+            transform: translateY(-5px);
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .card {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        }
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        footer .social-icons {
+            margin-top: 10px;
+        }
+        footer .social-icons a {
+            margin: 0 10px;
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        footer .social-icons a:hover {
+            color: #f9d342;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Professional Fancy Web</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>Welcome to Our Professional Website</h2>
+        <p>Discover modern, elegant, and responsive web solutions tailored to your needs. Dive into the sections below to see what we can offer.</p>
+        <a href="#services" class="btn">Explore Services</a>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>We create stunning, high-performance websites that meet your unique requirements.</p>
+            </div>
+            <div class="card">
+                <h3>UI/UX Design</h3>
+                <p>Transform user experiences with intuitive and visually striking designs.</p>
+            </div>
+            <div class="card">
+                <h3>Consulting</h3>
+                <p>Leverage expert guidance to navigate the digital landscape effectively.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Professional Fancy Web. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
